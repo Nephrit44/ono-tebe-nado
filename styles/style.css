@@ -1,1 +1,49 @@
-/* место для вашего кода */
+.container {
+    max-width: 1052px;
+}
+
+/*HEADER*/
+
+.header {
+    height: 105px;
+    margin-top: 92px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "RalewayR";
+    font-size: 18px;
+    line-height: 24.3px;
+}
+
+.menu_items {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 calc(13px + 18px);
+}
+
+.menu_item:not(:first-child) {
+    list-style: circle;
+}
+
+.menu_link {
+    border-bottom: 1px solid #000;
+}
+
+.menu_link__action {
+    border: none;
+}
+
+.logo_img {
+    width: 148px;
+    height: 105px;
+}
+
+.address_commonstyle {
+    display: inline-block;
+    border: apx solid #000;
+}
+
+.address {
+    max-width: 240px;
+}
