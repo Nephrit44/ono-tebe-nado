@@ -11,23 +11,23 @@
   </head>
   <body>
 
-    <header class="header container">
-        <nav class="menu">
-          <ul class="menu_items">
-            <li class="menu_item">
-              <a class="menu_link menu_link__action" href="#">главная</a>
+    <header class="header">
+        <nav class="header__menu">
+          <ul class="header__links-list">
+            <li class="header__links-list-item">
+              <a class="header__link header__link_active" href="#">главная</a>
             </li>
-            <li class="menu_item">
-              <a class="menu_link" href="#">посмотреть лоты</a>
+            <li class="header__links-list-item">
+              <a class="header__link" href="#">посмотреть лоты</a>
               </li>
-            <li class="menu_item">
-              <a class="menu_link" href="#">об аукционе</a>
+            <li class="header__links-list-item">
+              <a class="header__link" href="#">об аукционе</a>
             </li>
           </ul>
         </nav>
 
-        <a class="logo" href="#">
-          <img class="logo_img" src="/images/logo-black.svg" alt="Логотип Оно тебе надо">
+        <a class="header__logo" href="#">
+          <img class="header__logo-image" src="/images/logo-black.svg" alt="Логотип Оно тебе надо">
         </a>
 
         <address class="address">
@@ -40,10 +40,26 @@
 
     </header>
 
-    <main class="main">
+    <section class="intro">
+      <div class="container intro-flex">
+        <h1 class="intro_header">
+          <span class="to-display-block">оно</span>
+          <span class="align-center to-display-block">тебе</span>
+          <span class="align-right to-display-block">надо</span>
+        </h1>
 
-
-    </main>
+        <div class="intro_footer">
+          <p class="intro_footer_subtitle">
+            Аукцион вещей, вкоторые никто не верил
+          </p>
+          <a class="intro_footer_button" href="#">
+            Сделать ставку
+          </a>
+        </div>
+        <div class="intro_background-overlay"></div>
+        <img class="intro_background" src="./images/cover.jpg" alt="Фоновоая картинка для титульного заголовка">
+      </div>
+    </section>
 
     <footer class="footer">
 

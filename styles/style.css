@@ -1,5 +1,6 @@
 .container {
     max-width: 1052px;
+    margin: 0 auto;
 }
 
 /*HEADER*/
@@ -7,43 +8,120 @@
 .header {
     height: 105px;
     margin-top: 92px;
-    padding: 0 25px;
-    display: flex;
-    justify-content: space-between;
+    padding: 0 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 150px 1fr;
     align-items: center;
+
     font-family: "RalewayR";
     font-size: 18px;
     line-height: 24.3px;
+
+    background-color: #ccc;
 }
 
-.menu_items {
+
+.header__links-list {
     display: flex;
-    justify-content: space-between;
     gap: 0 calc(13px + 18px);
+    text-transform: lowercase;
 }
 
-.menu_item:not(:first-child) {
+.header__links-list-item:not(:first-child) {
     list-style: circle;
 }
 
-.menu_link {
+.header__link {
     border-bottom: 1px solid #000;
+    letter-spacing: 1%;
+    line-height: auto;
 }
 
-.menu_link__action {
+.header__link_active {
     border: none;
 }
 
-.logo_img {
+.header__logo-image {
+    display: flex;
     width: 148px;
     height: 105px;
 }
 
-.address_commonstyle {
-    display: inline-block;
-    border: apx solid #000;
+.address {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.address {
-    max-width: 240px;
+.address_commonstyle {
+    border-bottom: 1px solid #000;
+    max-width: 203px;
+}
+
+/*intro*/
+.intro {
+    color: #fff;
+    padding: 165px 50px 50px;
+    position: relative;
+}
+
+.intro_header {
+    font-family: RalewayB;
+    font-size: 100px;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.intro_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: RalewayR;
+    font-size: 22px;
+    color: #fff;
+}
+
+.intro_footer_subtitle {
+    padding-left: 27px;
+}
+
+.intro_footer_button {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #fff;
+    transition: all .3s ease-in;
+    margin-left: 30px;
+}
+
+.intro_footer_button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.intro_background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 757px;
+    z-index: -2;
+}
+
+.intro_background-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    z-index: -1;
+    opacity: 60%;
+}
+
+.intro-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 541px;
 }
