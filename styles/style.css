@@ -1,28 +1,35 @@
+/*common*/
 .container {
   max-width: 1052px;
   margin: 0 auto;
 }
 
+.overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 60%;
+}
+
 /*HEADER*/
 
 .header {
-  height: 105px;
-  margin: 92px 0 95px;
+  margin: 92px 0 96px;
   padding: 0 50px;
-
   display: grid;
   grid-template-columns: 1fr 150px 1fr;
   align-items: center;
-
-  font-family: "RalewayR";
-  font-size: 18px;
   line-height: 24.3px;
 }
 
 .header__links-list {
   display: flex;
-  gap: 0 calc(13px + 18px);
+  gap: 0 calc(13px + 19px);
   text-transform: lowercase;
+  padding-top: 4px;
 }
 
 .header__links-list-item:not(:first-child) {
@@ -30,9 +37,10 @@
 }
 
 .header__link {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   border-bottom: 1px solid #000;
-  letter-spacing: 1%;
-  line-height: auto;
 }
 
 .header__link_active {
@@ -49,8 +57,9 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 240px;
-  font-family: RalewayR;
+  max-width: 236px;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24.3px;
 }
@@ -64,11 +73,11 @@
   margin-left: auto;
 }
 
-.address_local {
+.address__local {
   text-align: left;
 }
 
-.link_hover-effect:hover {
+.link-hover-effect:hover {
   background-color: #dfdddd;
   border-radius: 4px;
   color: #0077ff;
@@ -78,73 +87,76 @@
 .intro {
   position: relative;
   color: #fff;
-  padding: 165px 50px 50px 50px;
+  padding: 160px 50px 50px 50px;
   margin-bottom: 179px;
   background-image: url(../images/cover.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  min-height: 757px;
 }
 
-.intro::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #000;
-  opacity: 60%;
-}
-
-.intro_header {
-  position: relative;
-  font-family: RalewayB;
+.intro__header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 23px;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
   font-size: 100px;
   line-height: 100px;
   text-transform: uppercase;
-  z-index: 3;
+  z-index: 1;
 }
 
-.intro_header-coommon {
+.intro__group_common {
   display: block;
 }
 
-.intro_header-coommon:not(:last-child) {
-  margin-bottom: 20px;
+.intro__group {
+  display: flex;
+  align-items: center;
 }
 
-.intro_header-span1 {
+.intro__group_leftstyle {
+  line-height: 115%;
+}
+
+.intro__group_centerstyle {
+  justify-content: center;
+  line-height: 100%;
+}
+
+.intro__group_rightstyle {
+  justify-content: flex-end;
+  line-height: 100%;
+}
+
+.intro__group_ls30 {
   letter-spacing: 30px;
 }
 
-.intro_header-span2 {
-  line-height: 129px;
-  letter-spacing: 45px;
+.intro__group_ls60 {
+  letter-spacing: 60px;
 }
 
-.intro_header-span3 {
-  line-height: 74px;
-  letter-spacing: 30px;
-}
-
-.intro_footer {
-  position: relative;
+.intro__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  font-family: RalewayR;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
   font-size: 22px;
   color: #fff;
-  z-index: 3;
+  z-index: 1;
 }
 
-.intro_footer_subtitle {
+.intro__footer-subtitle {
   padding-left: 27px;
   word-spacing: 18px;
 }
 
-.intro_footer_button {
+.intro__footer-button {
   display: inline-block;
   padding: 12px 32px;
   border: 1px solid #fff;
@@ -152,24 +164,16 @@
   margin-left: 30px;
 }
 
-.intro_footer_button:hover {
+.intro__footer-button:hover {
   background-color: #fff;
   color: #000;
-}
-
-.intro_background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 757px;
-  z-index: -2;
 }
 
 .intro-flex {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: 147px;
+  row-gap: 135px;
 }
 
 /*LOTS*/
@@ -177,79 +181,75 @@
   margin-bottom: 146px;
 }
 
-.lots_title {
+.lots__title {
   margin-left: 40px;
   margin-bottom: 27px;
-  font-family: RalewayB;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
   font-size: 40px;
   text-transform: uppercase;
 }
 
-.lots_card_title {
-  font-family: RalewayB;
+.card-item__title {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
   font-size: 22px;
   line-height: 120%;
   text-transform: uppercase;
+  max-height: 105px;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.lots_cards {
+.lots__card-list {
   display: flex;
   justify-content: space-between;
-  column-gap: 25px;
+  gap: 25px;
+  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 
-.lots_card {
+.lots__card-item {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 51px 40px 48px;
+  flex-grow: 1;
   width: 334px;
+  height: 564px;
+  padding: 51px 40px 48px;
   color: #fff;
-  overflow: hidden;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 
-.lots_card_img1 {
+.lots__card-item_img-first {
   background-image: url(../images/card-lot-01.jpg);
-  z-index: -2;
 }
 
-.lots_card_img2 {
+.lots__card-item_img-second {
   background-image: url(../images/card-lot-02.jpg);
-  z-index: -2;
 }
 
-.lots_card_img3 {
+.lots__card-item_img-third {
   background-image: url(../images/card-lot-03.jpg);
-  z-index: -2;
 }
 
-.lots_card::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #000;
-  z-index: -1;
-  opacity: 60%;
-}
-
-.lots_card_body {
-  font-family: RalewayR;
+.lots__body {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
   font-size: 20px;
   line-height: 120%;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.lots_link {
+.lots__link {
   margin-left: 40px;
   border-bottom: 1px solid #000;
-  font-family: RalewayR;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
   font-size: 20px;
   line-height: 120%;
 }
@@ -261,7 +261,7 @@
   margin-bottom: 180px;
 }
 
-.auction_logo-container {
+.auction__logo {
   width: 240px;
   height: 240px;
   background-color: #000;
@@ -273,32 +273,34 @@
   margin-left: 47px;
 }
 
-.auction_logo {
+.auction__img {
   width: 148px;
   height: 114px;
 }
 
-.auction_body {
+.auction__body {
   margin-top: 133px;
   max-width: 693px;
 }
 
-.auction_title {
-  font-family: RalewayB;
+.auction__title {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
   font-size: 40px;
   margin-bottom: 100px;
   text-transform: uppercase;
 }
 
-.auction_group {
+.auction__group {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   row-gap: 24px;
 }
 
-.auction_text {
-  font-family: RalewayR;
+.auction__text {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
 }
@@ -309,14 +311,15 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 98px;
   padding: 0 25px;
 }
 
-.footer_link-group {
-  max-width: 150px;
-  text-align: center;
-  font-family: RalewayR;
+.footer__link_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
   font-size: 18px;
   text-transform: lowercase;
 }
@@ -327,13 +330,13 @@
   transition: all .3s;
 }
 
-.footer_social-link {
+.footer__social-link {
   display: flex;
   justify-content: space-between;
   column-gap: 48px;
 }
 
-.footer_social-link_common {
+.footer__social-link-common {
   height: 48px;
   width: 48px;
   background-repeat: no-repeat;
@@ -341,28 +344,29 @@
   background-position: center center;
   border-radius: 50%;
   transition: all 0.3s;
-}
+}_
 
-.footer_youtube {
+.footer__youtube {
   background-image: url(../images/yt.svg);
 }
 
-.footer_youtube:hover {
+.footer__youtube:hover {
   background-color: #ff0000;
 }
 
-.footer_vk {
+.footer__vk {
   background-image: url(../images/vk.svg);
 }
 
-.footer_vk:hover {
+.footer__vk:hover {
   background-color: #0077ff;
 }
 
-.footer_pinterest {
+.footer__pinterest {
   background-image: url(../images/pinterest.svg);
 }
 
-.footer_pinterest:hover {
+.footer__pinterest:hover {
   background-color: #e60023;
 }
+
