@@ -326,37 +326,28 @@
   column-gap: 48px;
 }
 
-.footer__social-link-common {
+.footer__social-item {
   height: 48px;
   width: 48px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
   border-radius: 50%;
   transition: all 0.3s;
 }
 
-.footer__youtube {
-  background-image: url(../images/yt.svg);
+.footer__social-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
-.footer__youtube:hover {
+.youtube-change-color:hover {
   background-color: #ff0000;
 }
 
-.footer__vk {
-  background-image: url(../images/vk.svg);
-}
-
-.footer__vk:hover {
+.vk-change-color:hover {
   background-color: #0077ff;
 }
 
-.footer__pinterest {
-  background-image: url(../images/pinterest.svg);
-}
-
-.footer__pinterest:hover {
+.pinterest-changec-color:hover {
   background-color: #e60023;
 }
 
